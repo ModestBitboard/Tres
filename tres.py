@@ -42,8 +42,8 @@ try:
         }
         r = requests.post(post_url, data=payload, headers=headers)
         if r.status_code != 200:
-            print("\x1b[38;2;194;29;17mTask failed with status code %d\x1b[0m" % r.status_code)
-            exit(0)
+            print("\n\x1b[38;2;194;29;17mTask failed with status code %d\x1b[0m" % r.status_code)
+            quit(0)
         time.sleep(delay)
         completed_words += words_per_msg
         completed_msgs += 1
