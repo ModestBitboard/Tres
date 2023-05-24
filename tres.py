@@ -43,7 +43,7 @@ try:
         r = requests.post(post_url, data=payload, headers=headers)
         if r.status_code != 200:
             print("\n\x1b[38;2;194;29;17mTask failed with status code %d\x1b[0m" % r.status_code)
-            quit(0)
+            sys.exit(0)
         time.sleep(delay)
         completed_words += words_per_msg
         completed_msgs += 1
@@ -51,4 +51,4 @@ try:
             f"\r\x1b[38;2;252;186;3m{completed_words}/{total_words} Words | {completed_msgs}/{msgs} Messages\x1b[0m",
         )
 except KeyboardInterrupt:
-    quit(0)
+    sys.exit(0)
